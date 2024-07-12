@@ -1,0 +1,17 @@
+body {
+  padding: 20px;
+}
+
+.App {
+  /* 너비 400으로 고정, 남는 공간 자동으로 채워서 가운데 정렬 */
+  margin: 0 auto;
+  width: 400px;
+}
+
+.App > section {
+  background-color: rgb(245, 245, 245);
+  border: 1px solid rgb(240, 240, 240);
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 10px;
+}
