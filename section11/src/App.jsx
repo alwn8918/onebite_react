@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import List from "./components/List";
 import { useReducer } from "react";
 import { useCallback } from "react";
+import { createContext } from "react";
 
 const mockData = [
   {
@@ -42,6 +43,8 @@ function reducer(state, action) {
   }
 }
 
+export const TodoContext = createContext();
+
 function App() {
   const [todos, dispatch] = useReducer(reducer, mockData);
   const idRef = useRef(3);
@@ -75,8 +78,17 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Editor onCreate={onCreate} />
-      <List todos={todos} onUpdate={onUpdate} onDelete={onDelete} />
+      <TodoContext.Provider
+        value={{
+          todos,
+          onCreate,
+          onUpdate,
+          onDelete,
+        }}
+      >
+        <Editor />
+        <List todos={todos} />
+      </TodoContext.Provider>
     </div>
   );
 }
