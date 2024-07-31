@@ -6,7 +6,6 @@ import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { emotionList } from "../util/constants";
 import { getStringedDate } from "../util/get-stringed-date";
-
 const Editor = ({ initData, onSubmit }) => {
   const [input, setInput] = useState({
     createdDate: new Date(),
