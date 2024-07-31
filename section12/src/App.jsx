@@ -12,7 +12,7 @@ import { createContext } from "react";
 const mockData = [
   {
     id: 1,
-    createdDate: new Date("2024-07-30").getTime(),
+    createdDate: new Date("2024-08-01").getTime(),
     emotionId: 1,
     content: "1번 일기 내용",
   },
